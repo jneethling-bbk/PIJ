@@ -24,7 +24,7 @@ public class ArrayCopier {
 				dst[i] = src[i];
 			}
 			if (src.length < dst.length) {
-				for (int i = dst.length - (dst.length-src.length); i < dst.length; i++) {
+				for (int i = src.length; i < dst.length; i++) {
 					dst[i] = 0;
 				}
 			}
