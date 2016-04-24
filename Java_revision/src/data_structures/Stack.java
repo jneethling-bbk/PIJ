@@ -1,27 +1,22 @@
 package data_structures;
 
-public class Queue {
+public class Stack {
 	private IntegerNode head;
 	
-	public Queue() {
+	public Stack() {
 		head = null;
 	}
 	
-	public void insert(int value) {
+	public void push(int value) {
 		IntegerNode newNode = new IntegerNode(value);
-		if (head == null) {
-			head = newNode;
-			return;
-		} else {
-			IntegerNode current = head;
-			while (current.getNext() != null) {
-				current = current.getNext();
-			}
-			current.setNext(newNode);
+		IntegerNode oldHead = head;
+		head = newNode;		
+		if (oldHead != null) {
+			head.setNext(oldHead);
 		}
 	}
 	
-	public IntegerNode retrieve() {
+	public IntegerNode pop() {
 		if (head == null) {
 			return null;
 		} else {
@@ -31,18 +26,10 @@ public class Queue {
 		}
 	}
 	
-	public int size() {
-		int size = 0;
+	public boolean empty() {
 		if (head == null) {
-			return 0;
-		} else {
-			IntegerNode current = head;
-			while (current != null) {
-				size++;
-				current = current.getNext();
-			}
-		}
-		return size;
+			return true;
+		} else return false;
 	}
 	
 	@Override
