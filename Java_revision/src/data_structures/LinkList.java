@@ -41,6 +41,14 @@ public class LinkList {
 			return true;
 		}
 	}
+	public IntegerNode getHead() {
+		return head;
+	}
+	
+	public void removeHead() {
+		IntegerNode newHead = head.getNext();
+		head = newHead;
+	}
 	
 	@Override
 	public String toString() {
