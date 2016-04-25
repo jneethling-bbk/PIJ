@@ -3,7 +3,7 @@ package loops;
 public class Basicloops {
 
 	public static void main(String[] args) {
-		System.out.println(isPrime(29));
+		System.out.println(isPrime(997));
 		System.out.println(multiplyWithConstraint(5, 9));
 		System.out.println(divideWithConstraint(47, 9));
 
