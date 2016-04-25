@@ -1,19 +1,19 @@
 package data_structures;
 
 public class Queue {
-	private IntegerNode head;
+	private IntegerListNode head;
 	
 	public Queue() {
 		head = null;
 	}
 	
 	public void insert(int value) {
-		IntegerNode newNode = new IntegerNode(value);
+		IntegerListNode newNode = new IntegerListNode(value);
 		if (head == null) {
 			head = newNode;
 			return;
 		} else {
-			IntegerNode current = head;
+			IntegerListNode current = head;
 			while (current.getNext() != null) {
 				current = current.getNext();
 			}
@@ -21,11 +21,11 @@ public class Queue {
 		}
 	}
 	
-	public IntegerNode retrieve() {
+	public IntegerListNode retrieve() {
 		if (head == null) {
 			return null;
 		} else {
-			IntegerNode oldHead = head;
+			IntegerListNode oldHead = head;
 			head = oldHead.getNext();
 			return oldHead;
 		}
@@ -36,7 +36,7 @@ public class Queue {
 		if (head == null) {
 			return 0;
 		} else {
-			IntegerNode current = head;
+			IntegerListNode current = head;
 			while (current != null) {
 				size++;
 				current = current.getNext();
@@ -49,7 +49,7 @@ public class Queue {
 	public String toString() {
 		String str = "[";
 		if (head != null) {
-			IntegerNode current = head;
+			IntegerListNode current = head;
 			str = str + current.getValue();
 			while (current.getNext() != null) {
 				current = current.getNext();

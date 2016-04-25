@@ -2,19 +2,19 @@ package data_structures;
 
 public class LinkList {
 
-	private IntegerNode head;
+	private IntegerListNode head;
 	
 	public LinkList() {
 		head = null;
 	}
 	
 	public void add(int value) {
-		IntegerNode newNode = new IntegerNode(value);
+		IntegerListNode newNode = new IntegerListNode(value);
 		if (head == null) {
 			head = newNode;
 			return;
 		} else {
-			IntegerNode current = head;
+			IntegerListNode current = head;
 			while (current.getNext() != null) {
 				current = current.getNext();
 			}
@@ -30,7 +30,7 @@ public class LinkList {
 			head = head.getNext();
 			return true;
 		}
-		IntegerNode current = head;
+		IntegerListNode current = head;
 		while (current.getNext() != null && current.getNext().getValue() != value) {
 			current = current.getNext();
 		}
@@ -41,12 +41,12 @@ public class LinkList {
 			return true;
 		}
 	}
-	public IntegerNode getHead() {
+	public IntegerListNode getHead() {
 		return head;
 	}
 	
 	public void removeHead() {
-		IntegerNode newHead = head.getNext();
+		IntegerListNode newHead = head.getNext();
 		head = newHead;
 	}
 	
@@ -54,7 +54,7 @@ public class LinkList {
 	public String toString() {
 		String str = "[";
 		if (head != null) {
-			IntegerNode current = head;
+			IntegerListNode current = head;
 			str = str + current.getValue();
 			while (current.getNext() != null) {
 				current = current.getNext();
