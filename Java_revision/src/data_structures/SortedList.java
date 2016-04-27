@@ -50,6 +50,17 @@ public class SortedList {
 			return true;
 		}
 	}
+	public boolean contains(int n) {
+		IntegerListNode current = head;
+		while (current.getNext() != null) {
+			if (current.getValue() == n) {
+				return true;
+			} else {
+				current = current.getNext();
+			}
+		}
+		return false;
+	}
 	
 	@Override
 	public String toString() {

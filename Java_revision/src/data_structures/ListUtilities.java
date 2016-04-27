@@ -14,7 +14,17 @@ public class ListUtilities {
 		head = bubbleSort(head);
 		System.out.println(head.toString());
 		
+		SortedList sl = toSortedList(array);
+		System.out.println(sl.contains(4));
 		
+	}
+	
+	public static SortedList toSortedList(int[] array) {
+		SortedList tl = new SortedList();
+		for (int i : array) {
+			tl.add(i);
+		}
+		return tl;
 	}
 	
 	public static LinkList toLinkList(int[] array) {
@@ -32,6 +42,7 @@ public class ListUtilities {
 		}
 		return head;
 	}
+	
 	
 	public static void bubbleSort(LinkList unsorted) {
 		boolean change = true;
@@ -91,4 +102,5 @@ public class ListUtilities {
 		}
 		return unsorted;
 	}
+	
 }
