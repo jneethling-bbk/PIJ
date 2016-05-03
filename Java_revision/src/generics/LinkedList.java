@@ -4,12 +4,10 @@ public class LinkedList<T> {
 
 	private T nodeValue;
 	private LinkedList<T> next;
-	private LinkedList<T> prior;
 	
 	public LinkedList(T value) {
 		nodeValue = value;
 		next = null;
-		prior = null;
 	}
 	
 	public void add(LinkedList<T> toAdd) {
@@ -25,7 +23,6 @@ public class LinkedList<T> {
 			return false;
 		} else if (next.nodeValue == toDelete.nodeValue) {
 			next = next.next;
-			next.prior = this;
 			return true;
 		} else {
 			return next.delete(toDelete);
@@ -55,11 +52,4 @@ public class LinkedList<T> {
 		return next;
 	}
 	
-	public void setPrior(LinkedList<T> prior) {
-		this.prior = prior;
-	}
-	
-	public LinkedList<T> getPrior() {
-		return prior;
-	}
 }
