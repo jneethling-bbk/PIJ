@@ -2,8 +2,8 @@ package generics;
 
 public class LinkedList<T> {
 
-	private T nodeValue;
-	private LinkedList<T> next;
+	protected T nodeValue;
+	protected LinkedList<T> next;
 	
 	public LinkedList(T value) {
 		nodeValue = value;
@@ -51,5 +51,4 @@ public class LinkedList<T> {
 	public LinkedList<T> getNext() {
 		return next;
 	}
-	
 }
