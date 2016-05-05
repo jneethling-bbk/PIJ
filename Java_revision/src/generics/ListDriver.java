@@ -20,10 +20,13 @@ public class ListDriver {
 		System.out.println(theList.toString());
 		
 		
-		LinkedList<Integer> numbers = new LinkedList<Integer>(7);
-		numbers.add(new LinkedList<Integer>(3));
-		numbers.add(new LinkedList<Integer>(1));
-		numbers.add(new LinkedList<Integer>(2));		
+		SortedList<Integer> numbers = new SortedList<Integer>(null);
+		numbers.add(new SortedList<Integer>(7));
+		numbers.add(new SortedList<Integer>(3));
+		numbers.add(new SortedList<Integer>(1));
+		numbers.add(new SortedList<Integer>(2));
+		numbers.add(new SortedList<Integer>(9));
+		numbers.add(new SortedList<Integer>(4));
 		System.out.println(numbers.toString());
 
 	}
