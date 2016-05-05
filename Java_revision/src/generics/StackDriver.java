@@ -29,6 +29,17 @@ public class StackDriver {
 		System.out.println(dobs.pop());
 		System.out.println(dobs.pop());
 		
+		NumberStack<Number> num = new NumberStack<>();
+		System.out.println(num.isEmpty());
+		num.push(5);
+		num.push(3.7);
+		num.push(7L);
+		num.push(1.4);
+		System.out.println(num.isEmpty());
+		System.out.println(num.pop());
+		System.out.println(num.pop());
+		System.out.println(num.pop());
+		System.out.println(num.pop());
+		System.out.println(num.pop());
 	}
-
 }
