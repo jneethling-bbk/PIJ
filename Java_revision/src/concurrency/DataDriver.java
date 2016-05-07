@@ -1,5 +1,8 @@
 package concurrency;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class DataDriver implements Runnable {
 
 	private DataStructure d;
@@ -24,10 +27,13 @@ public class DataDriver implements Runnable {
 	
 	public static void main(String[] args) {
 		DataStructure struct = new DataStructure();
+		ExecutorService e = Executors.newFixedThreadPool(50);
 		for (int i = 0; i < 100; i++) {
 			DataDriver task = new DataDriver(struct, i);
-			new Thread(task).start();
+			//new Thread(task).start();
+			e.execute(task);
 		}
+		e.shutdown();
 		
 	}
 }
