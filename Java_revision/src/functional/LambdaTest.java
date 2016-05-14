@@ -6,19 +6,35 @@ import java.util.function.*;
 
 public class LambdaTest {
 
+	static Double runFunction(UnaryOperator<Double> uo, Double d) {
+		return uo.apply(d);
+	}
+	
+	static Double runFunction(BinaryOperator<Double> bo, Double d1, Double d2) {
+		return bo.apply(d1, d2);
+	}
+	
+	static Double runFunction(Function<Integer, Double> f, Integer i) {
+		return f.apply(i);
+	}
+	
 	public static void main(String[] args) {
 		
-		UnaryOperator<Integer> unary;
+		UnaryOperator<Double> unary;
 		unary = n -> n * 2;
-		System.out.println(unary.apply(3));
+		System.out.println(runFunction(unary, 3.0));
 		unary = n -> n + 1;
-		System.out.println(unary.apply(3));
+		System.out.println(runFunction(unary, 3.0));
 		
 		BinaryOperator<Double> binary;
 		binary = (x, y) -> x + y;
-		System.out.println(binary.apply(5.1, 4.9));
+		System.out.println(runFunction(binary, 5.1, 4.9));
 		binary = (x, y) -> x/y;
-		System.out.println(binary.apply(5.0, 2.0));
+		System.out.println(runFunction(binary, 5.0, 2.0));
+		
+		Function<Integer, Double> myFunction;
+		myFunction = i -> (double) i.intValue();
+		System.out.println(runFunction(myFunction, 5));
 		
 		List<String> myList = new ArrayList<>();
 		myList.add("Hannes");
@@ -40,10 +56,6 @@ public class LambdaTest {
 		System.out.println(myNum.get());
 		myNum = () -> Math.random() * 100;
 		System.out.println(myNum.get());
-
-		Function<Integer, Double> myFunction;
-		myFunction = i -> (double) i.intValue();
-		System.out.println(myFunction.apply(5));
 		
 		Predicate<Integer> myTest;
 		myTest = n -> (n % 2) == 0;
