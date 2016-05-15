@@ -2,7 +2,7 @@ package functional;
 
 public class GenericMethodRefDemo {
 
-	public static <T> int count(MyFunction mf, T[] vals, T v) {
+	public static <T> int count(MyFunction<T> mf, T[] vals, T v) {
 		return mf.doIt(vals, v);
 	}
 	
@@ -11,10 +11,10 @@ public class GenericMethodRefDemo {
 		String[] strings = {"One", "Two", "Three", "Two"};
 		int counter;
 		
-		counter = count(MyArrayOps :: countMatching, values, 3);
+		counter = count(MyArrayOps :: <Integer> countMatching, values, 3);
 		System.out.println("values contain " + counter + " 3s");
 		
-		counter = count(MyArrayOps :: countMatching, strings, "Two");
+		counter = count(MyArrayOps :: <String> countMatching, strings, "Two");
 		System.out.println("strings contain " + counter + " Twos");
 	}
 
