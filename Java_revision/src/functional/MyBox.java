@@ -8,6 +8,10 @@ public class MyBox {
 		this.value = value;
 	}
 	
+	public MyBox() {
+		value = 0;
+	}
+	
 	public int getValue() {
 		return value;
 	}
