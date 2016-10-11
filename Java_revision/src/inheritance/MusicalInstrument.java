@@ -1,5 +1,6 @@
 package inheritance;
 
 public interface MusicalInstrument {
-	void play();
+	
+	void play(String tune);
 }
